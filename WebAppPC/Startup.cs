@@ -1,3 +1,4 @@
+using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -22,7 +23,8 @@ namespace WebAppPC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddControllers();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
