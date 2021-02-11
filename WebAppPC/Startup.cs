@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebAppPC.Helpers;
 
 namespace WebAppPC
 {
@@ -24,6 +25,8 @@ namespace WebAppPC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -56,7 +59,7 @@ namespace WebAppPC
             }
 
             app.UseRouting();
-
+            app.UseStaticFiles();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
