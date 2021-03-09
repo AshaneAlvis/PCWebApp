@@ -1,15 +1,10 @@
-using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Linq;
-using WebAppPC.Errors;
 using WebAppPC.Extensions;
 using WebAppPC.Helpers;
 using WebAppPC.Middleware;
@@ -40,6 +35,13 @@ namespace WebAppPC
             x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
             services.AddApplicationServices();
             services.AddSwaggerDocumentation();
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("CorsPolicy", policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:5001");
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +59,7 @@ namespace WebAppPC
 
             app.UseRouting();
             app.UseStaticFiles();
+            app.UseCors("CorsPolicy");
             app.UseAuthorization();
             app.UseSwaggerDocumentation();
             app.UseEndpoints(endpoints =>

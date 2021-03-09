@@ -12,10 +12,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebAppPC.Dtos;
 using WebAppPC.Errors;
+using WebAppPC.Helpers;
 
 namespace WebAppPC.Controllers
 {
-    public class ProductsController: BaseApiController
+    public class ProductsController : BaseApiController
     {
         private readonly IGenericRepository<Product> _productRepo;
         private readonly IGenericRepository<ProductBrand> _productBrandRepo;
@@ -32,11 +33,19 @@ namespace WebAppPC.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts()
+        public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts([FromQuery]ProductsSpecParams productsParams)
         {
-            var spec = new ProductsWithTypesAndBrandsSpecification();
+            var spec = new ProductsWithTypesAndBrandsSpecification(productsParams);
+
+            var countSpec = new ProductWithFiltersForCountSpecification(productsParams);
+
+            var totalItems = await _productRepo.CountAsync(countSpec);
+
             var products = await _productRepo.ListAsync(spec);
-            return Ok(_mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products));
+
+            var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
+            
+            return Ok(new Pagination<ProductToReturnDto>(productsParams.PageIndex,productsParams.PageSize, totalItems, data));
         }
 
         [HttpGet("{id}")]
@@ -50,12 +59,12 @@ namespace WebAppPC.Controllers
             return _mapper.Map<Product, ProductToReturnDto>(product);
         }
 
-       [HttpGet("brands")]
-       public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
+        [HttpGet("brands")]
+        public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
         {
             return Ok(await _productBrandRepo.ListAllAsync());
         }
-        
+
         [HttpGet("types")]
         public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes()
         {
