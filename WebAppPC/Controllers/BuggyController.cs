@@ -33,7 +33,7 @@ namespace WebAppPC.Controllers
         {
             var result = _context.Products.Find(41);
             var returnTo = result.ToString();
-            return Ok();
+            return Ok(returnTo);
         }
 
         [HttpGet("badrequest")]

@@ -51,6 +51,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\app\core\Interceptors\" />
     <Folder Include="ClientApp\src\app\shared\components\" />
   </ItemGroup>
 
