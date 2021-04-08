@@ -39,6 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\shared\models\basket.ts" />
     <None Remove="ClientApp\src\app\shared\models\brand.ts" />
     <None Remove="ClientApp\src\app\shared\models\pagination.ts" />
     <None Remove="ClientApp\src\app\shared\models\product.ts" />
