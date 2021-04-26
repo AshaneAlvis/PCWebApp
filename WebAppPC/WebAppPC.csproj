@@ -45,6 +45,7 @@
     <None Remove="ClientApp\src\app\shared\models\product.ts" />
     <None Remove="ClientApp\src\app\shared\models\productType.ts" />
     <None Remove="ClientApp\src\app\shared\models\shopParams.ts" />
+    <None Remove="ClientApp\src\app\shared\models\user.ts" />
   </ItemGroup>
 
   <ItemGroup>
