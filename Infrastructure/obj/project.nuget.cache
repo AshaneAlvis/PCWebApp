@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CKTVCfNyX91h7UJQcgvqEawtqIaFmxPC9zRXR3Vl5Rl3BWCU8o7ngifBY2/mBQ7D++kvUKYge8sWtzKckFz6bw==",
+  "dgSpecHash": "HrSo5ywro68ByMlsy3185piQlBRAJOkNo7Yuxvji2Va6qxCOg/wxw1pN5nIu7KTIRAPN/7AtpuUOrheBHgs9UA==",
   "success": true,
   "projectFilePath": "C:\\My Projects\\WebAppPC\\WebAppPC\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -63,13 +63,14 @@
     "C:\\Users\\Ashane Alvis\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\Ashane Alvis\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Ashane Alvis\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
-    "C:\\Users\\Ashane Alvis\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Ashane Alvis\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Ashane Alvis\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.0\\pipelines.sockets.unofficial.2.2.0.nupkg.sha512",
     "C:\\Users\\Ashane Alvis\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\Ashane Alvis\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
     "C:\\Users\\Ashane Alvis\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\Ashane Alvis\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.4\\sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
     "C:\\Users\\Ashane Alvis\\.nuget\\packages\\stackexchange.redis\\2.2.4\\stackexchange.redis.2.2.4.nupkg.sha512",
+    "C:\\Users\\Ashane Alvis\\.nuget\\packages\\stripe.net\\39.49.0\\stripe.net.39.49.0.nupkg.sha512",
     "C:\\Users\\Ashane Alvis\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Ashane Alvis\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\Ashane Alvis\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",

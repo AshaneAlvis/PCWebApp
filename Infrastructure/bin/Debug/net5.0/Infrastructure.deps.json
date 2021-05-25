@@ -15,6 +15,7 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "5.0.2",
           "Microsoft.IdentityModel.Tokens": "6.10.2",
           "StackExchange.Redis": "2.2.4",
+          "Stripe.net": "39.49.0",
           "System.IdentityModel.Tokens.Jwt": "6.10.2"
         },
         "runtime": {
@@ -148,7 +149,7 @@
       "Microsoft.AspNetCore.NodeServices/3.1.11": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Console": "3.1.11",
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.AspNetCore.NodeServices.dll": {
@@ -455,11 +456,11 @@
           "Microsoft.NETCore.Platforms": "5.0.0"
         }
       },
-      "Newtonsoft.Json/12.0.2": {
+      "Newtonsoft.Json/12.0.3": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.2.23222"
+            "fileVersion": "12.0.3.23909"
           }
         }
       },
@@ -591,6 +592,18 @@
           "lib/net5.0/StackExchange.Redis.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.2.4.27433"
+          }
+        }
+      },
+      "Stripe.net/39.49.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3",
+          "System.Configuration.ConfigurationManager": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/Stripe.net.dll": {
+            "assemblyVersion": "39.49.0.0",
+            "fileVersion": "39.49.0.0"
           }
         }
       },
@@ -1134,12 +1147,12 @@
       "path": "microsoft.win32.systemevents/5.0.0",
       "hashPath": "microsoft.win32.systemevents.5.0.0.nupkg.sha512"
     },
-    "Newtonsoft.Json/12.0.2": {
+    "Newtonsoft.Json/12.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
-      "path": "newtonsoft.json/12.0.2",
-      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
     "Pipelines.Sockets.Unofficial/2.2.0": {
       "type": "package",
@@ -1182,6 +1195,13 @@
       "sha512": "sha512-wM0OuRyRaZTFndFRjIOvas4jjkeclRJsmNm0eAx5tOju3SQisrLubNaSFT/dBypi4Vh1n7nYc1gWpw9L7ernOg==",
       "path": "stackexchange.redis/2.2.4",
       "hashPath": "stackexchange.redis.2.2.4.nupkg.sha512"
+    },
+    "Stripe.net/39.49.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-N6uyatbR2VYxj+DreTGBhu3P1uSqKmGAca82/Rt4usWA5qRtqNJ3PgRXQW9NHH1KioxQa9HNYMwANeMdAg019Q==",
+      "path": "stripe.net/39.49.0",
+      "hashPath": "stripe.net.39.49.0.nupkg.sha512"
     },
     "System.Buffers/4.5.0": {
       "type": "package",
