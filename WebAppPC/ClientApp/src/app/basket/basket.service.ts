@@ -145,7 +145,6 @@ export class BasketService {
   }
 
   private mapProductItemToBasketItem(item: IProduct, quantity: number): IBasketItem {
-    console.log(item);
     return {
       brand: item.productBrand,
       id: item.id,
