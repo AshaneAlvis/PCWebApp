@@ -20,6 +20,7 @@ export class AccountService {
   loadCurrentUser(token: string) {
 
     if (token === null) {
+      debugger;
       this.currentUserSource.next(null);
       return of(null);
     }

@@ -13,3 +13,7 @@ C:\My Projects\WebAppPC\WebAppPC\Infrastructure\obj\Debug\net5.0\Infrastructure.
 C:\My Projects\WebAppPC\WebAppPC\Infrastructure\obj\Debug\net5.0\Infrastructure.dll
 C:\My Projects\WebAppPC\WebAppPC\Infrastructure\obj\Debug\net5.0\ref\Infrastructure.dll
 C:\My Projects\WebAppPC\WebAppPC\Infrastructure\obj\Debug\net5.0\Infrastructure.pdb
+C:\My Projects\WebAppPC\WebAppPC\Infrastructure\bin\Debug\net5.0\Data\SeedData\brands.json
+C:\My Projects\WebAppPC\WebAppPC\Infrastructure\bin\Debug\net5.0\Data\SeedData\delivery.json
+C:\My Projects\WebAppPC\WebAppPC\Infrastructure\bin\Debug\net5.0\Data\SeedData\products.json
+C:\My Projects\WebAppPC\WebAppPC\Infrastructure\bin\Debug\net5.0\Data\SeedData\types.json

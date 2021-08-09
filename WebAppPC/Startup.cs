@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using StackExchange.Redis;
+using System.IO;
 using WebAppPC.Extensions;
 using WebAppPC.Helpers;
 using WebAppPC.Middleware;
@@ -32,13 +34,20 @@ namespace WebAppPC
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "ClientApp/dist";
+                //configuration.RootPath = "ClientApp/dist";
+                configuration.RootPath = "wwwroot";
             });
-            services.AddDbContext<StoreContext>(x => 
-            x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<StoreContext>(x => 
+            //x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<StoreContext>(x =>
+            x.UseNpgsql(_config.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<AppIdentityDbContext>(x =>
+            //{
+            //    x.UseSqlite(_config.GetConnectionString("IdentityConnection"));
+            //});
             services.AddDbContext<AppIdentityDbContext>(x =>
             {
-                x.UseSqlite(_config.GetConnectionString("IdentityConnection"));
+                x.UseNpgsql(_config.GetConnectionString("IdentityConnection"));
             });
             services.AddSingleton<IConnectionMultiplexer>(c =>
             {
@@ -72,16 +81,21 @@ namespace WebAppPC
 
             app.UseRouting();
             app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "Content")
+                    ),
+                RequestPath = "/content"
+            });
             app.UseCors("CorsPolicy");
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseSwaggerDocumentation();
             app.UseEndpoints(endpoints =>
             {
-                //endpoints.MapControllerRoute(
-                //    name: "default",
-                //    pattern: "{controller}/{action=Index}/{id?}");
                 endpoints.MapControllers();
+                endpoints.MapFallbackToController("Index", "Fallback");
             });
 
             app.UseSpa(spa =>
